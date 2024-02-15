@@ -10,8 +10,10 @@
 // mongoose client lib
 import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://127.0.0.1:27017/school')
-  .then(() => console.log('Connected!'));
+mongoose.connect('mongodb://127.0.0.1:27017/student_management')
+  .then(() =>
+    console.log('Connected!'))
+  .catch((err)=>{console.log(error)})
 
 
 

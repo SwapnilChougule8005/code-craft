@@ -1,8 +1,9 @@
 import {StudentModel} from '../models';
 
 class StudentRepo {
-    async createStudent(student){
-        const result = await StudentModel.create(student);
+    async createStudent(studentObj){
+        const student = new StudentModel(studentObj)
+        const result = await student.save();
     }
 }
 
