@@ -8,12 +8,38 @@
 // Finally create an api to consume data from database or create data into database
 
 // mongoose client lib
-import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://127.0.0.1:27017/student_management')
+
+// singleton design pattern implementation 
+// connect all layers 
+// perform db operation 
+// implement config for project
+// configure eslint and prettier
+// how to host mongo db on cloud
+
+
+import mongoose from 'mongoose'
+import express from 'express';
+import { RootController } from './src/controller';
+import { envConfig } from './src/config';
+
+const app = express();
+
+app.use(express.json())
+app.use(RootController)
+
+
+const PORT = envConfig.getPort()
+
+// start server
+app.listen(PORT, ()=>{
+  console.log(`server is running on http://localhost:${PORT}`)
+  
+  mongoose.connect(envConfig.getMongoDBUrl())
   .then(() =>
     console.log('Connected!'))
   .catch((err)=>{console.log(error)})
+})
 
 
 
