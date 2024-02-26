@@ -1,10 +1,15 @@
 import {StudentRepo} from '../repositories';
 
+
 class StudentService{
 
     constructor(){
         this.studentRepo = new StudentRepo();
-        process.env.PORT // 
+        if(!StudentService.instance){
+            StudentService.instance = this;
+        }
+
+        return StudentService.instance;
     }
     
     

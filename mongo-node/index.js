@@ -28,7 +28,6 @@ const app = express();
 app.use(express.json())
 app.use(RootController)
 
-
 const PORT = envConfig.getPort()
 
 // start server
