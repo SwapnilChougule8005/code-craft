@@ -1,0 +1,49 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket One-to-One Chat</title>
+</head>
+<body>
+  <input type="text" id="toUser" placeholder="Enter receiver's user ID">
+  <input type="text" id="messageInput" placeholder="Type a message...">
+  <button onclick="sendMessage()">Send</button>
+  <ul id="chatMessages"></ul>
+
+  <script>
+    const userId = prompt('Enter your user ID:');
+    const ws = new WebSocket(`ws://localhost:3000/${userId}`);
+    const chatMessages = document.getElementById('chatMessages');
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      const listItem = document.createElement('li');
+      listItem.textContent = `${data.from}: ${data.content}`;
+      chatMessages.appendChild(listItem);
+    };
+
+    function sendMessage() {
+      const toUserInput = document.getElementById('toUser');
+      const messageInput = document.getElementById('messageInput');
+      const toUserId = toUserInput.value;
+      const messageContent = messageInput.value;
+
+      // Send message in the format: { to: 'receiverUserId', content: 'messageContent' }
+      const message = JSON.stringify({ to: toUserId, content: messageContent });
+      ws.send(message);
+
+      // Display the sent message in the chat
+      const listItem = document.createElement('li');
+      listItem.textContent = `You to ${toUserId}: ${messageContent}`;
+      chatMessages.appendChild(listItem);
+
+      // Clear input fields
+      toUserInput.value = '';
+      messageInput.value = '';
+    }
+  </script>
+</body>
+</html>
