@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/src/views/index.html`);
 });
 
+app.get('/personal-chat', (req, res) => {
+  res.sendFile(`${__dirname}/src/views/single-chat.html`);
+});
+
 app.use(express.json());
 app.use(RootController);
 
