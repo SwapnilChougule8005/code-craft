@@ -1,0 +1,94 @@
+.box {
+    width: 300px;
+    padding: 40px;
+    position: relative;
+    margin: auto;
+    background: transparent;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .text-center {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block;
+    color: #fff;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-container input:focus {
+    border-bottom-color: #e50914;
+  }
+  
+  .input-container label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 0 5px;
+    color: #999;
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+  }
+  
+  .input-container input:focus + label,
+  .input-container input:not(:placeholder-shown) + label {
+    top: -15px;
+    font-size: 12px;
+    color: #e50914;
+  }
+  
+  .error-message {
+    color: #e50914;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #b20710;
+  }
+  
+  .toggle-link {
+    color: #e50914;
+    cursor: pointer;
+  }
+  
+  .toggle-link:hover {
+    text-decoration: underline;
+  }
+  
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+  }

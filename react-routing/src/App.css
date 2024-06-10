@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+.h1{
+  color: #570505;
+  text-align: center;
+}
+.form{
+  margin-top: 20px;
+}
+.label{
+  width: 100px;
+  padding: 8px;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+.button{
+  width: 80px;
+  padding: 5px;
+  color: blue;
+  cursor: pointer;
+}
+.sub-list{
+  list-style: none;
+  columns: 2;
+  column-gap: 25px;
+  color: #58580b;
+  padding: 0px;
+  margin: 10px ;
+}
+
+.list{
+  list-style: none;
+  color: #f36608;
+}
+.h3{
+  color: #6a2403;
+}
+.p{
+  color: rgb(110, 212, 33);
+}
+.h4{
+  color: darkmagenta;
+}
+.h2{
+   color: rgb(118, 8, 8);
+}
+.address{
+  font-size: 1em;
+  color: #607ba3;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.phone{
+  font-size: 1.2em;
+  color: #2c3e50;
+}
