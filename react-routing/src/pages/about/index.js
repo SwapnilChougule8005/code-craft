@@ -1,9 +1,11 @@
 import React from 'react';
 import  './styles.css'
+import Header from '../../components/header';
 
 const About = () => {
     return (
         <div>
+            <Header/>
             <div>
                 <h1 className='h1'>CODE CRAFT</h1>
                 <p className='p'>LEARN, CREATE, INNOVATION</p>

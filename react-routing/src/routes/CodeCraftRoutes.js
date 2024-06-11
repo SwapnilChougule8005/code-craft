@@ -1,5 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
-import { AboutPage, ContactPage, HomePage, SignInPage, SignUpPage } from '../pages'
+import { AboutPage, ContactPage, CoursesPage, HomePage, SignInPage, SignUpPage } from '../pages'
 
 const routes = createBrowserRouter([
     {
@@ -28,6 +28,14 @@ const routes = createBrowserRouter([
     // {
     //     path:'userDetails'
     // },
+    {
+        path:'/courses',
+        element:<CoursesPage/>
+    },
+    {
+        path:'/courses/:courseName',
+        element:<CoursesPage/>
+    }
 ])
 
 export default routes;

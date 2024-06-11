@@ -1,8 +1,10 @@
 import React from 'react';
 import  './styles.css'
+import Header from '../../components/header';
 const Contact = () => {
     return (
         <div>
+            <Header/>
             <h2 className='h2'>Class Address</h2>
             <p className='address'>
                 Laxmipush apartment,
